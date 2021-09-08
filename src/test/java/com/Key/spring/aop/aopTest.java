@@ -16,7 +16,7 @@ public class aopTest {
     @Test
     public void testProxy() {
         // 获取工厂对象
-        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("aop.xml");
 
         // 通过工厂对象获取book对象
         Book book = context.getBean("book", Book.class);
