@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 创建部门对象 -->
+    <bean id="dept" class="com.Key.spring.ioc.bean.Department"></bean>
+
+    <!--
+        创建员工对象，注入属性
+         - 通过 对象.属性 的方式给部门的属性赋值
+    -->
+    <bean id="emp" class="com.Key.spring.ioc.bean.Employee">
+        <property name="empName" value="孙尚香"></property>
+        <property name="gender" value="女"></property>
+        <property name="empDept" ref="dept"></property>
+        <property name="empDept.deptName" value="技术部"></property>
+    </bean>
+
+<!--    <bean id="emp" class="com.Key.spring.ioc.bean.Employee">
+        <property name="empName" value="孙尚香"></property>
+        <property name="gender" value="女"></property>
+        <property name="empDept" ref="dept"></property>
+    </bean>-->
+</beans>

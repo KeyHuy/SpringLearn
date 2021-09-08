@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 创建user对象，并注入属性 -->
+    <!-- 注入属性方式一：set方法 -->
+    <bean id="u" class="com.Key.spring.ioc.bean.User">
+        <property name="name" value="周瑜"></property>
+        <property name="age" value="24"></property>
+    </bean>
+
+    <!-- 注入属性方式二：有参构造器 -->
+<!--    <bean id="u" class="com.Key.spring.ioc.bean.User">
+        <constructor-arg name="username" value="诸葛亮"></constructor-arg>
+        <constructor-arg name="age" value="21"></constructor-arg>
+    </bean>-->
+</beans>

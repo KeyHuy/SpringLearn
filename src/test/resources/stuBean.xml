@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 创建多个课程类对象 -->
+    <bean id="c1" class="com.Key.spring.ioc.bean.Course">
+        <property name="cname" value="java实验课"></property>
+    </bean>
+    <bean id="c2" class="com.Key.spring.ioc.bean.Course">
+        <property name="cname" value="c语言实验课"></property>
+    </bean>
+    <bean id="c3" class="com.Key.spring.ioc.bean.Course">
+        <property name="cname" value="数据结构实验课"></property>
+    </bean>
+
+
+    <!-- 创建学生对象，并对其多个数组、集合类型属性赋值 -->
+    <bean id="stu" class="com.Key.spring.ioc.bean.Students">
+        <!-- 给数组赋值 -->
+        <property name="course">
+            <list>
+                <value>高数</value>
+                <value>c语言</value>
+            </list>
+        </property>
+
+        <!-- 给set集合赋值 -->
+        <property name="stuSet">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+            </set>
+        </property>
+
+        <!-- 给Map集合赋值 -->
+        <property name="stuMap">
+            <map>
+                <entry key="周一" value="上课"></entry>
+                <entry key="周日" value="放假"></entry>
+            </map>
+        </property>
+
+        <!-- 给list集合赋值，list集合元素类型是Course -->
+        <property name="stuCourse">
+            <list>
+                <ref bean="c1"></ref>
+                <ref bean="c2"></ref>
+                <ref bean="c3"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>
