@@ -2,6 +2,7 @@ package com.Key.spring.aop.proxy;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 @Aspect
+@Order(-1)
 public class BookProxy {
 
     /**
@@ -27,7 +29,7 @@ public class BookProxy {
      */
     @Before(value = "pointCut()")
     public void before() {
-        System.out.println("前置通知");
+        System.out.println("BookProxy --> 前置通知");
     }
 
     /**
